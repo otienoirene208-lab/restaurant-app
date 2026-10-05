@@ -1,0 +1,750 @@
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.signup-page {
+  min-height: 100vh;
+  padding: 60px 7%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(244, 195, 155, 0.55),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(198, 107, 43, 0.10),
+      transparent 30%
+    ),
+    #faf8f5;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   DECORATIVE CIRCLES
+========================= */
+
+.signup-decoration {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.signup-decoration-one {
+  width: 330px;
+  height: 330px;
+
+  top: -170px;
+  right: -100px;
+
+  border: 2px solid rgba(198, 107, 43, 0.12);
+}
+
+.signup-decoration-two {
+  width: 220px;
+  height: 220px;
+
+  bottom: -100px;
+  left: -90px;
+
+  background: rgba(244, 195, 155, 0.20);
+}
+
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.signup-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+.signup-food-card {
+  width: 100%;
+  max-width: 620px;
+
+  padding: 12px;
+
+  background: white;
+
+  border-radius: 32px;
+
+  box-shadow:
+    0 25px 60px rgba(67, 42, 28, 0.15);
+}
+
+
+/* =========================
+   FOOD IMAGE
+========================= */
+
+.signup-food-image {
+  min-height: 650px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 25px;
+
+  background-image:
+    url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1400&q=90");
+
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* =========================
+   IMAGE OVERLAY
+========================= */
+
+.signup-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(35, 23, 17, 0.15),
+      rgba(35, 23, 17, 0.72)
+    );
+}
+
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.signup-food-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 500px;
+
+  padding: 45px;
+
+  text-align: center;
+
+  color: white;
+}
+
+
+/* =========================
+   LOGO CIRCLE
+========================= */
+
+.signup-logo-circle {
+  width: 90px;
+  height: 90px;
+
+  margin: 0 auto 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.16);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  backdrop-filter: blur(10px);
+
+  font-size: 40px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18);
+
+  transition: 0.3s;
+}
+
+.signup-logo-circle:hover {
+  transform: rotate(-5deg) scale(1.08);
+}
+
+
+/* =========================
+   SMALL TITLE
+========================= */
+
+.signup-small-title {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: #ffd3ad;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 4px;
+}
+
+
+/* =========================
+   BIG TITLE
+========================= */
+
+.signup-food-content h1 {
+  margin: 0 0 20px;
+
+  font-size: 52px;
+
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  text-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.signup-food-content p {
+  max-width: 460px;
+
+  margin: 0 auto;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   FOOD ICONS
+========================= */
+
+.signup-food-icons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  margin-top: 32px;
+}
+
+.signup-food-icons span {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.16);
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+  font-size: 22px;
+
+  transition: 0.3s;
+}
+
+.signup-food-icons span:hover {
+  transform: translateY(-8px);
+
+  background: rgba(255, 255, 255, 0.28);
+
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.signup-form-area {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================
+   SIGN UP CARD
+========================= */
+
+.signup-card {
+  width: 100%;
+  max-width: 510px;
+
+  padding: 42px 48px;
+
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border: 1px solid #eadfd6;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 25px 60px rgba(67, 42, 28, 0.13);
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   TOP ACCENT LINE
+========================= */
+
+.signup-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 6px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #e09a62,
+      #c66b2b,
+      #a84e20
+    );
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.signup-heading {
+  margin-bottom: 27px;
+}
+
+.signup-heading span {
+  color: #c66b2b;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+.signup-heading h2 {
+  margin: 9px 0;
+
+  color: #29231f;
+
+  font-size: 38px;
+
+  line-height: 1.2;
+}
+
+.signup-heading p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   INPUT GROUP
+========================= */
+
+.signup-input-group {
+  margin-bottom: 17px;
+}
+
+.signup-input-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #493126;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   INPUT WRAPPER
+========================= */
+
+.signup-input-wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================
+   INPUT ICON
+========================= */
+
+.signup-input-wrapper .input-icon {
+  position: absolute;
+
+  left: 15px;
+
+  z-index: 2;
+
+  font-size: 16px;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.signup-input-wrapper input {
+  width: 100%;
+
+  padding: 14px 48px 14px 45px;
+
+  border: 1px solid #dfd1c6;
+
+  border-radius: 13px;
+
+  background: #fffdfb;
+
+  color: #29231f;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border 0.3s,
+    box-shadow 0.3s,
+    background 0.3s;
+}
+
+.signup-input-wrapper input::placeholder {
+  color: #aaa;
+}
+
+.signup-input-wrapper input:hover {
+  border-color: #cda98e;
+}
+
+.signup-input-wrapper input:focus {
+  border-color: #c66b2b;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 4px rgba(198, 107, 43, 0.10);
+}
+
+
+/* =========================
+   PASSWORD TOGGLE
+========================= */
+
+.password-toggle {
+  position: absolute;
+
+  right: 9px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  font-size: 17px;
+
+  transition: 0.25s;
+}
+
+.password-toggle:hover {
+  background: #f7eee7;
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+}
+
+.password-toggle:focus {
+  outline: 2px solid #c66b2b;
+
+  outline-offset: 2px;
+}
+
+
+/* =========================
+   TERMS
+========================= */
+
+.signup-terms {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin: 18px 0 20px;
+
+  color: #777;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.signup-terms input {
+  width: 16px;
+  height: 16px;
+
+  accent-color: #c66b2b;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   CREATE ACCOUNT BUTTON
+========================= */
+
+.signup-submit {
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d98950,
+      #b85f2a
+    );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 28px rgba(184, 95, 42, 0.25);
+
+  transition: 0.3s;
+}
+
+.signup-submit:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 17px 35px rgba(184, 95, 42, 0.34);
+}
+
+.signup-submit:active {
+  transform: translateY(0);
+}
+
+
+/* =========================
+   SIGN IN SECTION
+========================= */
+
+.signup-bottom {
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  text-align: center;
+
+  border-top: 1px solid #eee4dc;
+}
+
+.signup-bottom p {
+  margin: 0 0 8px;
+
+  color: #777;
+
+  font-size: 13px;
+}
+
+.signin-link {
+  border: none;
+
+  background: transparent;
+
+  color: #b85f2a;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.signin-link:hover {
+  color: #8e461f;
+
+  text-decoration: underline;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+  .signup-page {
+    grid-template-columns: 1fr;
+
+    padding: 50px 6%;
+
+    gap: 40px;
+  }
+
+  .signup-food-card {
+    max-width: 700px;
+  }
+
+  .signup-food-image {
+    min-height: 500px;
+  }
+
+  .signup-form-area {
+    padding-bottom: 20px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .signup-page {
+    padding: 30px 15px;
+
+    gap: 25px;
+  }
+
+  .signup-food-card {
+    padding: 8px;
+
+    border-radius: 25px;
+  }
+
+  .signup-food-image {
+    min-height: 430px;
+
+    border-radius: 20px;
+  }
+
+  .signup-food-content {
+    padding: 25px 18px;
+  }
+
+  .signup-logo-circle {
+    width: 70px;
+    height: 70px;
+
+    font-size: 30px;
+  }
+
+  .signup-food-content h1 {
+    font-size: 36px;
+  }
+
+  .signup-food-content p {
+    font-size: 14px;
+  }
+
+  .signup-food-icons span {
+    width: 45px;
+    height: 45px;
+
+    font-size: 19px;
+  }
+
+  .signup-card {
+    padding: 35px 22px;
+
+    border-radius: 25px;
+  }
+
+  .signup-heading h2 {
+    font-size: 30px;
+  }
+
+  .signup-input-wrapper input {
+    padding: 13px 45px 13px 42px;
+  }
+}
+

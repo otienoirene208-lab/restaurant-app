@@ -1,0 +1,363 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #faf8f5;
+  color: #29231f;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  min-height: 82px;
+
+  padding: 14px 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  background: white;
+
+  border-bottom: 1px solid #eee2d8;
+
+  box-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.08);
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #29231f;
+
+  text-decoration: none;
+
+  font-size: 24px;
+  font-weight: bold;
+
+  white-space: nowrap;
+}
+
+.logo-icon {
+  font-size: 29px;
+}
+
+/* =========================
+   MAIN NAVIGATION
+========================= */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.main-nav a {
+  padding: 11px 15px;
+
+  color: #29231f;
+
+  background: #fff8f0;
+
+  border: 1px solid #ead8c8;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+  background: #c66b2b;
+
+  color: white;
+
+  border-color: #c66b2b;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 12px rgba(198, 107, 43, 0.25);
+}
+
+/* =========================
+   RIGHT SIDE BUTTONS
+========================= */
+
+.auth-area {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  white-space: nowrap;
+}
+
+/* SIGN IN */
+
+.signin-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 16px;
+
+  background: white;
+
+  color: #29231f;
+
+  border: 1px solid #d8c6b8;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.signin-nav-btn:hover {
+  background: #fff1e5;
+
+  color: #c66b2b;
+
+  border-color: #c66b2b;
+
+  transform: translateY(-2px);
+}
+
+/* SIGN UP */
+
+.signup-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 16px;
+
+  background: #fff1e5;
+
+  color: #c66b2b;
+
+  border: 1px solid #c66b2b;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.signup-nav-btn:hover {
+  background: #c66b2b;
+
+  color: white;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 12px rgba(198, 107, 43, 0.25);
+}
+
+/* ORDER NOW */
+
+.order-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 19px;
+
+  background: #c66b2b;
+
+  color: white;
+
+  border: 2px solid #c66b2b;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+  background: #a9531e;
+
+  border-color: #a9531e;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 15px rgba(169, 83, 30, 0.3);
+}
+
+/* =========================
+   LOGGED-IN USER
+========================= */
+
+.welcome-user {
+  color: #29231f;
+
+  font-size: 14px;
+
+  font-weight: bold;
+}
+
+.signout-btn {
+  padding: 11px 16px;
+
+  background: white;
+
+  color: #29231f;
+
+  border: 1px solid #d8c6b8;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.signout-btn:hover {
+  background: #29231f;
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1150px) {
+  .navbar {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    padding: 18px 3%;
+  }
+
+  .logo {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .main-nav {
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+
+  .auth-area {
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 15px;
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .logo-icon {
+    font-size: 25px;
+  }
+
+  .main-nav {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 7px;
+  }
+
+  .main-nav a {
+    text-align: center;
+
+    padding: 10px 8px;
+
+    font-size: 14px;
+  }
+
+  .auth-area {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 7px;
+  }
+
+  .signin-nav-btn,
+  .signup-nav-btn,
+  .order-btn,
+  .signout-btn {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .order-btn {
+    grid-column: 1 / -1;
+  }
+
+  .welcome-user {
+    grid-column: 1 / -1;
+
+    text-align: center;
+  }
+}
