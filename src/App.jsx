@@ -1,6 +1,4 @@
-
 import { useState } from "react";
-import "./App.css";
 
 import Home from "./Components/Home";
 import Menu from "./Components/Menu";
@@ -9,32 +7,127 @@ import Contact from "./Components/Contact";
 import Order from "./Components/Order";
 import SignIn from "./Components/SignIn";
 import SignUp from "./Components/SignUp";
+import GetProducts from "./Components/GetProducts";
+import AddProducts from "./Components/AddProducts";
+
+import "./App.css";
 
 function App() {
+  // Load saved products from localStorage
+  const [products, setProducts] = useState(() => {
+    try {
+      const savedProducts = localStorage.getItem("urbanPlateProducts");
+
+      return savedProducts ? JSON.parse(savedProducts) : [];
+    } catch (error) {
+      console.error("Could not load saved products:", error);
+      return [];
+    }
+  });
+
   const [page, setPage] = useState("home");
 
-  // When the user successfully signs in
-  const handleSignIn = () => {
-    setPage("home");
+  // Add a new product
+  const handleAddProduct = (newProduct) => {
+    const productWithId = {
+      ...newProduct,
+      id: Date.now(),
+    };
+
+    setProducts((currentProducts) => {
+      const updatedProducts = [
+        ...currentProducts,
+        productWithId,
+      ];
+
+      // Save products to localStorage
+      localStorage.setItem(
+        "urbanPlateProducts",
+        JSON.stringify(updatedProducts)
+      );
+
+      return updatedProducts;
+    });
+
+    // Automatically go to Products page
+    setPage("getproducts");
   };
 
-  // When the user wants to go to Sign Up
-  const handleGoToSignUp = () => {
-    setPage("signup");
+  const renderPage = () => {
+    switch (page) {
+      case "home":
+        return <Home />;
+
+      case "menu":
+        return <Menu />;
+
+      case "about":
+        return <About />;
+
+      case "contact":
+        return <Contact />;
+
+      case "order":
+        return <Order />;
+
+      case "signin":
+        return (
+          <SignIn
+            onSignIn={() => setPage("home")}
+            onGoToSignUp={() => setPage("signup")}
+          />
+        );
+
+      case "signup":
+        return (
+          <SignUp
+            onSignUp={() => setPage("signin")}
+            onGoToSignIn={() => setPage("signin")}
+          />
+        );
+
+      case "getproducts":
+        return (
+          <GetProducts
+            products={products}
+          />
+        );
+
+      case "addproducts":
+        return (
+          <AddProducts
+            onAddProduct={handleAddProduct}
+          />
+        );
+
+      default:
+        return <Home />;
+    }
   };
 
   return (
     <div className="restaurant-app">
 
-      {/* ================= NAVBAR ================= */}
-
+      {/* NAVBAR */}
       <header className="navbar">
 
-        <div className="logo">
+        {/* LOGO */}
+        <div
+          className="logo"
+          onClick={() => setPage("home")}
+          role="button"
+          tabIndex="0"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              setPage("home");
+            }
+          }}
+        >
           <span className="logo-icon">🍴</span>
           <span>Urban Plate</span>
         </div>
 
+        {/* NAVIGATION */}
         <nav>
 
           <button onClick={() => setPage("home")}>
@@ -46,152 +139,71 @@ function App() {
           </button>
 
           <button onClick={() => setPage("about")}>
-            About Us
+            About
           </button>
 
           <button onClick={() => setPage("contact")}>
             Contact
           </button>
 
-          <button
-            className="order-button"
-            onClick={() => setPage("order")}
-          >
-            Order
+          <button onClick={() => setPage("getproducts")}>
+            Products
           </button>
 
-          <button
-            className="signin-button"
-            onClick={() => setPage("signin")}
-          >
+          <button onClick={() => setPage("signin")}>
             Sign In
           </button>
 
-          <button
-            className="signup-button"
-            onClick={() => setPage("signup")}
-          >
+          <button onClick={() => setPage("signup")}>
             Sign Up
+          </button>
+
+          <button
+            className="order-btn"
+            onClick={() => setPage("order")}
+          >
+            Order Now
           </button>
 
         </nav>
 
       </header>
 
-
-      {/* ================= MAIN CONTENT ================= */}
-
+      {/* PAGE CONTENT */}
       <main>
-
-        {page === "home" && (
-          <Home />
-        )}
-
-        {page === "menu" && (
-          <Menu />
-        )}
-
-        {page === "about" && (
-          <About />
-        )}
-
-        {page === "contact" && (
-          <Contact />
-        )}
-
-        {page === "order" && (
-          <Order />
-        )}
-
-        {page === "signin" && (
-          <SignIn
-            onSignIn={handleSignIn}
-            onGoToSignUp={handleGoToSignUp}
-          />
-        )}
-
-        {page === "signup" && (
-          <SignUp
-            onSignIn={() => setPage("signin")}
-          />
-        )}
-
+        {renderPage()}
       </main>
 
+      {/* ADD PRODUCT BUTTON */}
+      {page === "getproducts" && (
+        <div className="admin-product-links">
 
-      {/* ================= FOOTER ================= */}
-
-      <footer className="footer">
-
-        <div className="footer-content">
-
-          <div className="footer-section">
-
-            <h2>🍴 Urban Plate</h2>
-
-            <p>
-              Good food. Good mood.
-              Fresh flavors made with love.
-            </p>
-
-          </div>
-
-
-          <div className="footer-section">
-
-            <h3>Quick Links</h3>
-
-            <button onClick={() => setPage("home")}>
-              Home
-            </button>
-
-            <button onClick={() => setPage("menu")}>
-              Menu
-            </button>
-
-            <button onClick={() => setPage("about")}>
-              About Us
-            </button>
-
-            <button onClick={() => setPage("contact")}>
-              Contact
-            </button>
-
-            <button onClick={() => setPage("order")}>
-              Order
-            </button>
-
-          </div>
-
-
-          <div className="footer-section">
-
-            <h3>Contact Us</h3>
-
-            <p>📍 Nairobi, Kenya</p>
-
-            <p>📞 +254 700 000 000</p>
-
-            <p>✉️ info@urbanplate.com</p>
-
-          </div>
+          <button
+            onClick={() => setPage("addproducts")}
+            className="add-product-nav-btn"
+          >
+            ➕ Add New Product
+          </button>
 
         </div>
+      )}
 
+      {/* VIEW PRODUCTS BUTTON */}
+      {page === "addproducts" && (
+        <div className="admin-product-links">
 
-        <div className="footer-bottom">
-
-          <p>
-            © 2026 Urban Plate. All Rights Reserved.
-          </p>
+          <button
+            onClick={() => setPage("getproducts")}
+            className="view-products-nav-btn"
+          >
+            🍽️ View Products
+          </button>
 
         </div>
-
-      </footer>
+      )}
 
     </div>
   );
 }
 
 export default App;
-

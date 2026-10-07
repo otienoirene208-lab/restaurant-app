@@ -1,0 +1,205 @@
+/* =========================
+   ADD PRODUCTS PAGE
+========================= */
+
+.add-product-page {
+  min-height: 100vh;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #fff8f0, #f8eee4);
+  color: #29231f;
+}
+
+.add-product-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(65, 45, 30, 0.12);
+}
+
+.add-product-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.add-product-icon {
+  display: block;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.add-product-header h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #3a2920;
+}
+
+.add-product-header p {
+  margin-top: 10px;
+  color: #777;
+  font-size: 16px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.add-product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 700;
+  color: #3a2920;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ddcfc3;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #fff;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #d8894d;
+  box-shadow: 0 0 0 3px rgba(216, 137, 77, 0.12);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* =========================
+   IMAGE UPLOAD
+========================= */
+
+.form-group input[type="file"] {
+  padding: 12px;
+  background: #fff8f0;
+  border: 2px dashed #d8894d;
+  cursor: pointer;
+}
+
+.form-group input[type="file"]:hover {
+  background: #fff1e3;
+}
+
+.image-help {
+  color: #777;
+  font-size: 13px;
+}
+
+/* =========================
+   IMAGE PREVIEW
+========================= */
+
+.image-preview-container {
+  padding: 20px;
+  background: #fff8f0;
+  border-radius: 18px;
+  border: 1px solid #ead8c9;
+  text-align: center;
+}
+
+.image-preview-container h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #3a2920;
+}
+
+.image-preview {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(65, 45, 30, 0.15);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.clear-btn,
+.add-btn {
+  border: none;
+  padding: 14px 25px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.clear-btn {
+  background: #eee;
+  color: #3a2920;
+}
+
+.clear-btn:hover {
+  background: #ddd;
+}
+
+.add-btn {
+  background: #d8894d;
+  color: white;
+}
+
+.add-btn:hover {
+  background: #b96d36;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .add-product-page {
+    padding: 25px 12px;
+  }
+
+  .add-product-container {
+    padding: 25px 18px;
+  }
+
+  .add-product-header h1 {
+    font-size: 28px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .clear-btn,
+  .add-btn {
+    width: 100%;
+  }
+}
